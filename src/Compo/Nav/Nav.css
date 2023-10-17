@@ -1,0 +1,98 @@
+nav {
+    padding: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLeftSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navLeftSide img {
+    width: 40px;
+}
+
+
+.searchBox {
+    width: 240px;
+    padding: 8px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.searchBox input {
+    width: 196px;
+    height: 24px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: rgb(245, 243, 243);
+
+}
+
+
+.searchIcon {
+    font-size: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.contentIcon {
+    width: 130px;
+    display: block;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 0px;
+}
+
+.contentIcon:hover {
+    background-color: rgba(135, 135, 135, 0.374);
+    border-radius: 10px;
+}
+
+.active {
+    color: #0866ff !important;
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #0866ff;
+    border-radius: 5px;
+    bottom: -9px;
+}
+
+
+.navRightSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.myIcons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

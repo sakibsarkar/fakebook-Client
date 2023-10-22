@@ -1,0 +1,96 @@
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+
+}
+
+.heroLog {
+    background: white;
+    width: 380px;
+
+    border-radius: 10px;
+    padding: 28px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+.logInForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.logInForm input {
+    width: calc(100% - 50px);
+    font-size: 16px;
+    height: 37px;
+    padding: 7px 35px 7px 15px;
+    outline: none;
+    border: 1px solid #e4e5e8;
+    border-radius: 5px;
+}
+
+.logInForm p {
+    width: 100%;
+    text-align: left;
+    color: #2784fb;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.logInForm button {
+    width: 100%;
+    height: 46px;
+    background-color: rgb(24, 119, 242);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.gotToSignIn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1.5px solid #bdbdbd;
+    padding: 13px 0 0 0;
+
+}
+
+.gotToSignIn button {
+    background-color: #42b72a;
+    width: 165px;
+    height: 46px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+
+.eye {
+    font-size: 19px;
+    position: absolute;
+    /* on reltive to form (.logInForm) */
+    top: 87px;
+    right: 16px;
+    color: #65738f;
+}

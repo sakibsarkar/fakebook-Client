@@ -1,0 +1,15 @@
+.signInEye {
+    font-size: 19px;
+    position: absolute;
+    /* on reltive to form (.logInForm) */
+    top: 235px;
+    right: 16px;
+    color: #65738f;
+}
+
+.names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}

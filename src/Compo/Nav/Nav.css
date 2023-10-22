@@ -1,15 +1,20 @@
 nav {
-    padding: 9px;
+    position: fixed;
+    padding: 7px 15px;
+    width: calc(100vw - 30px);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+
+
+
 .navLeftSide {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 8px;
 }
 
 .navLeftSide img {
@@ -86,6 +91,7 @@ nav ul {
     align-items: center;
     gap: 10px;
     font-size: 20px;
+    margin: 0 15px 0 0;
 }
 
 .myIcons {

@@ -3,3 +3,17 @@
 * {
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+#root {
+    background-color: #18191a;
+    min-height: 100vh;
+}
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}

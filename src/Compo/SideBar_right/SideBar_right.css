@@ -1,0 +1,141 @@
+.rightSideBar {
+    position: fixed;
+    right: 0;
+    top: 60px;
+
+    padding: 20px 10px 0 0;
+
+}
+
+
+.sponsored {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 15px;
+    flex-direction: column;
+    border-bottom: 1.5px solid #4c4c4c;
+    padding: 0 0 15px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sponsored img {
+    width: 140px;
+    border-radius: 7px;
+}
+
+.sponsored>h1 {
+    color: rgb(176, 179, 184);
+    font-size: 20px;
+}
+
+
+.sponsoredContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.sponsoredContent:hover {
+    background-color: #4c4c4c69;
+}
+
+.sponsoredContent h1 {
+    color: white;
+    font-size: 17px;
+
+}
+
+.sponsoredContent p {
+    color: rgb(176, 179, 184);
+    font-size: 15px;
+}
+
+.recentReq {
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1.5px solid #4c4c4c;
+}
+
+.recentReq>a {
+    display: flex;
+    justify-content: start;
+    align-items: self-start;
+    gap: 20px;
+    padding: 10px;
+    color: #dadce1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recentReq>a:hover {
+    background-color: #767474ca;
+}
+
+.recentReq>h1 {
+    font-size: 18px;
+    color: rgb(176, 179, 184);
+}
+
+.recentReq>a>img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.requestedId {
+    display: flex;
+    justify-content: center;
+    align-items: self-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.requestedId>h1 {
+    font-size: 16px;
+    color: rgb(239, 239, 240);
+
+}
+
+.reqBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.confirm {
+    width: 124px;
+    background-color: rgb(8, 102, 255);
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.delete {
+
+    width: 124px;
+    background-color: #303031;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}

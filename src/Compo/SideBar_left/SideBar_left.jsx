@@ -1,13 +1,16 @@
 import "./SideBar_left.css";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { context } from "../ContextProvider/ContextProvider";
 
 const SideBar_left = () => {
+    const { user } = useContext(context)
     return (
         <div className="sidebarLeft">
             <Link className="fullWidth">
                 <div className="chocobar">
-                    <div style={{ width: "36px", height: "36px", overflow: "hidden", backgroundImage: "url('https://i.ibb.co/yfdJJLc/585e4beacb11b227491c3399.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", borderRadius: "50%" }}></div>
-                    <p>Najmus Sakib</p>
+                    <div style={{ width: "36px", height: "36px", overflow: "hidden", backgroundImage: `url(${user?.photoURL})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", borderRadius: "50%" }}></div>
+                    <p>{user?.displayName}</p>
                 </div>
             </Link>
 

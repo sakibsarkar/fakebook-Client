@@ -1,0 +1,78 @@
+.upldContainer {
+    width: calc(100% - 30px);
+    background: #242526;
+    border-radius: 6px;
+    padding: 20px 15px;
+    margin: 23px 0;
+
+}
+
+.textSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 1px solid #3a3b3c;
+    padding: 0 0 14px 0;
+}
+
+.croper {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.croper img {
+    width: 100%;
+}
+
+.uploadBox {
+    width: 88%;
+    background: #3a3b3c;
+    padding: 7px 19px;
+    border-radius: 27px;
+    color: #b0b3b8;
+    cursor: pointer;
+}
+
+
+.method {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    gap: 10px;
+    padding: 9px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #b0b3b8;
+}
+
+.method:hover {
+    background-color: rgba(98, 101, 100, 0.504);
+}
+
+.liveIcon {
+    color: #f02849;
+    font-size: 24px;
+}
+
+.photoIcon {
+    color: #45bd62;
+    font-size: 24px;
+}
+
+.feelingIcon {
+    color: #f7b928;
+    font-size: 24px;
+}
+
+
+.heroUploads {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

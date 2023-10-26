@@ -59,7 +59,9 @@ const ContextProvider = ({ children }) => {
         LogInUser,
         LogOut,
         setWait,
-        loading
+        loading,
+        setLoading
+
 
     }
     return (

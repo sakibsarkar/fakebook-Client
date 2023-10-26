@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import { context } from "../ContextProvider/ContextProvider";
 
 const Login = () => {
-    const { CreateUser, LogInUser } = useContext(context)
+
+    const { CreateUser, LogInUser, setLoading } = useContext(context)
     const [showPass, setShowPas] = useState(false)
 
     const handleCreateUser = (e) => {
@@ -18,7 +19,13 @@ const Login = () => {
 
         LogInUser(email, password)
             .then(res => console.log("sfd"))
-            .catch(err => toast.error("invalid email or password"))
+            .catch(err => {
+                toast.error("invalid email or password")
+                setLoading(false)
+
+
+
+            })
     }
 
     return (

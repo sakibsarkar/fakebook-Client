@@ -1,0 +1,116 @@
+.storyWrapper {
+    overflow: hidden;
+}
+
+
+.storyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 680px;
+    position: relative;
+    left: 132px;
+
+
+}
+
+.uploadStories {
+    min-width: 140px;
+    min-height: 250px;
+    background-color: #242526;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.userCroper {
+    width: 100%;
+    height: 201px;
+    overflow: hidden;
+}
+
+.userCroper img {
+    width: 100%;
+    height: 100%;
+}
+
+.uploadBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: -17px 0 0 0;
+}
+
+.uploadBtns>div {
+    font-size: 21px;
+    color: white;
+    border: 5px solid #242526;
+    height: 32px;
+    background: #2370ff;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.uploadBtns p {
+    color: white;
+    font-size: 13px;
+}
+
+.story {
+    min-width: 140px;
+    min-height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+.story .storyItem {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.7);
+    border-radius: 6px;
+}
+
+
+.storyOwner {
+    position: absolute;
+    background: #2370ff;
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    padding: 3px;
+    z-index: 99;
+    top: 11px;
+    left: 7px;
+
+}
+
+.storyOwner img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+
+}
+
+.storyOwnerName {
+    position: absolute;
+    z-index: 100;
+    color: white;
+    bottom: 7px;
+    left: 12px;
+    font-size: 14px;
+
+}

@@ -76,3 +76,61 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+/* upload modal */
+
+.modalWrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0e0e0e8a;
+    z-index: 999999;
+}
+
+
+.uploadModal {
+    width: 460px;
+    height: 470px;
+    background: #242526;
+    padding: 15px 20px;
+    border: 0.1px solid #7a7b7d2e;
+    position: relative;
+    border-radius: 7px;
+}
+
+.uploadHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e1e3e8;
+}
+
+.cancelPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    border-radius: 50%;
+    padding: 7px;
+    font-size: 20px;
+    height: 20px;
+    background: #3a3b3c;
+    color: #7a7b7d;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+}
+
+.uploadModalUnderLine {
+    height: 1px;
+    width: 100%;
+    background: #2f3031;
+    position: absolute;
+    top: 69px;
+}

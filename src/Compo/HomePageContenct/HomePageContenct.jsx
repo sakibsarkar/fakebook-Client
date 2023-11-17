@@ -2,11 +2,11 @@ import "./HomePageContenct.css";
 import PostUpload from "./PostUpload/PostUpload";
 import Story from "./Story/Story";
 
-const HomePageContenct = () => {
+const HomePageContenct = ({ loading }) => {
     return (
         <div className="HomeMain">
             <Story></Story>
-            <PostUpload></PostUpload>
+            {loading ? "Loading" : <PostUpload></PostUpload>}
         </div>
     );
 };

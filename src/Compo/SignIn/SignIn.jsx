@@ -4,19 +4,20 @@ import toast, { Toaster } from "react-hot-toast";
 import { sendEmailVerification, updateCurrentUser, updateProfile } from "firebase/auth";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { uploadIMG } from "../../Hooks/uploadIMG";
 import { context } from "../ContextProvider/ContextProvider";
 
 const SignIn = () => {
-    const { CreateUser } = useContext(context)
-    const [showPass, setShowPas, setWait] = useState(false)
+    const { CreateUser, setWait } = useContext(context)
+    const [showPass, setShowPas] = useState(false)
 
     const navigate = useNavigate()
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault()
         const form = e.target
         const firstName = form.Fname.value
         const lastName = form.Lname.value
-        const photoURL = form.photoURL.value
+        const photoURL = form.photo.files[0]
         const userName = firstName.concat(" ", lastName)
         const email = form.email.value
         const password = form.password.value
@@ -39,13 +40,14 @@ const SignIn = () => {
             return toast.error("password didn't matched")
         }
 
+        const { data } = await uploadIMG(photoURL)
 
         CreateUser(email, password)
             .then(res => {
                 console.log(res)
                 updateProfile(res.user, {
                     displayName: userName,
-                    photoURL: photoURL
+                    photoURL: data.display_url
                 })
                     .then(() => {
 
@@ -70,7 +72,7 @@ const SignIn = () => {
                         <input type="text" name="Fname" placeholder="Your First name" spellCheck="false" required />
                         <input type="text" name="Lname" placeholder="Your Last name" spellCheck="false" required />
                     </div>
-                    <input type="text" name="photoURL" placeholder="Your Photo Url" spellCheck="false" required />
+                    <input type="file" accept="image/*" name="photo" spellCheck="false" required />
                     <input type="email" name="email" placeholder="Your Email" spellCheck="false" required />
                     <input type={showPass ? "text" : "password"} name="password" placeholder="Your Password" spellCheck="false" required />
                     <input type="password" name="confirm" placeholder="Your Password" spellCheck="false" required />

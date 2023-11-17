@@ -1,4 +1,5 @@
 import "./Login.css";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { useState } from "react";
@@ -10,21 +11,19 @@ const Login = () => {
 
     const { CreateUser, LogInUser, setLoading } = useContext(context)
     const [showPass, setShowPas] = useState(false)
+    const axiosPublic = UseAxiosPublic()
 
-    const handleCreateUser = (e) => {
+    const handleCreateUser = async (e) => {
         e.preventDefault()
         const form = e.target
         const email = form.email.value
         const password = form.password.value
 
         LogInUser(email, password)
-            .then(res => console.log("sfd"))
+
             .catch(err => {
                 toast.error("invalid email or password")
                 setLoading(false)
-
-
-
             })
     }
 

@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.uploadBox:hover {
+    background: #494a4b;
+}
+
 
 .method {
     display: flex;
@@ -109,6 +113,8 @@
     justify-content: center;
     align-items: center;
     color: #e1e3e8;
+    border-bottom: 2px solid #393939;
+    padding: 0 0 20px 0;
 }
 
 .cancelPost {
@@ -133,4 +139,116 @@
     background: #2f3031;
     position: absolute;
     top: 69px;
+}
+
+
+.uploader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.uploader .uploaderImg {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.uploaderImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.uploadStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #cccccc;
+
+}
+
+.visibility {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #3a3b3c;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+
+.postForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.postForm .postCaption {
+    width: 100%;
+    height: 100px;
+    outline: none;
+    border: none;
+    color: white;
+    resize: none;
+    background-color: transparent;
+}
+
+.postForm .postBox {
+    height: 180px;
+    background: #323436;
+    width: 100%;
+    border-radius: 9px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 1px solid #545454;
+}
+
+.postForm .postBox:hover {
+    background-color: #474a4c;
+}
+
+.postBox .addIcon {
+
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #47494a;
+    font-size: 22px;
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postForm button {
+    width: 100%;
+    color: white;
+    background-color: #0866ff;
+    border: none;
+    padding: 9px 0;
+    border-radius: 5px;
+    margin: 18px 0 0 0;
+
+
+}
+
+.postForm button:disabled {
+    background-color: #505151;
+    cursor: not-allowed;
 }

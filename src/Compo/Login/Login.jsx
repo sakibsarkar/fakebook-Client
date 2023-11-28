@@ -1,17 +1,18 @@
 import "./Login.css";
-import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import UseAxios from "../../Hooks/UseAxios";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { addTokenToLS } from "../../Hooks&Functions/LocalStorage";
 import { context } from "../ContextProvider/ContextProvider";
 
 const Login = () => {
 
     const { CreateUser, LogInUser, setLoading } = useContext(context)
     const [showPass, setShowPas] = useState(false)
-    const axiosPublic = UseAxiosPublic()
+    const axios = UseAxios()
 
     const handleCreateUser = async (e) => {
         e.preventDefault()
@@ -19,12 +20,19 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        LogInUser(email, password)
+        try {
+            const res = await LogInUser(email, password)
+            const { data } = await axios.post(`/user/token`, { email })
+            console.log(data.token);
+            addTokenToLS(data.token)
+        }
 
-            .catch(err => {
-                toast.error("invalid email or password")
-                setLoading(false)
-            })
+        catch (err) {
+            toast.error("invalid email or password")
+            setLoading(false)
+        }
+
+
     }
 
     return (

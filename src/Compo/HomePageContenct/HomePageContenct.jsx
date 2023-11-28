@@ -6,7 +6,7 @@ const HomePageContenct = ({ loading }) => {
     return (
         <div className="HomeMain">
             <Story></Story>
-            {loading ? "Loading" : <PostUpload></PostUpload>}
+            <PostUpload></PostUpload>
         </div>
     );
 };

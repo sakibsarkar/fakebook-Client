@@ -1,17 +1,20 @@
 import "./SigIn.css";
 import React, { useContext, useState } from "react";
+import UseAxios from "../../Hooks/UseAxios";
 import toast, { Toaster } from "react-hot-toast";
 import { sendEmailVerification, updateCurrentUser, updateProfile } from "firebase/auth";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { addTokenToLS } from "../../Hooks&Functions/LocalStorage";
 import { uploadIMG } from "../../Hooks/uploadIMG";
 import { context } from "../ContextProvider/ContextProvider";
 
-const SignIn = () => {
+const SignIn = async () => {
     const { CreateUser, setWait } = useContext(context)
     const [showPass, setShowPas] = useState(false)
 
     const navigate = useNavigate()
+    const axios = UseAxios()
     const handleLogin = async (e) => {
         e.preventDefault()
         const form = e.target
@@ -42,22 +45,20 @@ const SignIn = () => {
 
         const { data } = await uploadIMG(photoURL)
 
-        CreateUser(email, password)
-            .then(res => {
-                console.log(res)
-                updateProfile(res.user, {
-                    displayName: userName,
-                    photoURL: data.display_url
-                })
-                    .then(() => {
+        const res = await CreateUser(email, password)
+        const { data: tokenData } = await axios.post(`/user/token`, { email })
+        addTokenToLS(tokenData.token)
+        await updateProfile(res.user, {
+            displayName: userName,
+            photoURL: data.display_url
+        })
 
-                        sendEmailVerification(res.user)
-                    })
 
-                navigate("/mailCheck")
-                setWait(false)
+        await sendEmailVerification(res.user)
+        setWait(false)
+        navigate("/mailCheck")
 
-            })
+
 
 
     }

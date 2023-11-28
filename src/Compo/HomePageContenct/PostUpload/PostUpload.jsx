@@ -14,6 +14,9 @@ const PostUpload = () => {
     const firstName = user?.displayName?.split(" ")[0]
     const [isDisable, setIsdisable] = useState(true)
 
+    // user uploaded image preview
+    const [showPreview, setShowPreview] = useState(null)
+
     const postImgRef = useRef(null)
 
 
@@ -31,6 +34,38 @@ const PostUpload = () => {
 
         setIsdisable(false)
     }
+
+
+
+    // selected image preview func
+    const showImage = (e) => {
+        const file = e.target.files[0]
+        const reader = new FileReader()
+
+        reader.onloadend = () => {
+            setShowPreview({ file: file, previewURL: reader.result })
+        }
+
+        reader.readAsDataURL(file)
+
+        console.log(showPreview?.previewURL);
+    }
+
+
+
+    // poast upload function
+    const handleUploadPost = async (e) => {
+        e.preventDefault()
+        const form = e.target
+        // post caption
+        const postCap = form.postCap.value
+
+        // post image
+        const image = form.postImg.files[0]
+        console.log(postCap, image);
+    }
+
+
 
 
     return (
@@ -88,19 +123,28 @@ const PostUpload = () => {
 
 
 
-                        <form className="postForm">
-                            <textarea onKeyUp={checkCaption} type="text" className="postCaption" placeholder={`what's on your mind ${firstName}`} />
+                        <form className="postForm" onSubmit={handleUploadPost} >
+                            <textarea onKeyUp={checkCaption} type="text" className="postCaption" placeholder={`what's on your mind ${firstName}`} name="postCap" />
 
                             <div className="postBox" onClick={pickImage}>
+
+
+                                {
+                                    showPreview ?
+                                        <img className="previewImg" src={showPreview.previewURL} alt="" /> : ""
+                                }
 
 
                                 <div className="addIcon">
                                     <MdPhotoLibrary></MdPhotoLibrary>
                                 </div>
 
-                                <p>Add a Photo</p>
+                                {
+                                    showPreview ? "" : <p>Add a Photo</p>
+                                }
 
-                                <input type="file" name="postImg" id="postImg" accept="image/*" ref={postImgRef} style={{ display: "none" }} />
+
+                                <input onChange={showImage} type="file" name="postImg" id="postImg" accept="image/*" ref={postImgRef} style={{ display: "none" }} />
                             </div>
 
                             <button type="submit" disabled={isDisable ? true : false}>Post</button>

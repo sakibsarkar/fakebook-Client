@@ -1,0 +1,132 @@
+.postCard {
+    background-color: #242526;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+
+.uploaderBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.uploaderBox img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.postTop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+
+.uploadDetails {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.uploadDetails h3 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+.uploadDetails p {
+    font-size: 12px;
+    color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+}
+
+
+.postedImg {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+
+}
+
+.postedImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+.caption {
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+}
+
+
+
+.reaction {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.reactNumber {
+    width: 100%;
+    color: #afafaf;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 13px;
+}
+
+
+
+.ClickReaction {
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-top: 1px solid #3a3b3c;
+    border-bottom: 1px solid #3a3b3c;
+}
+
+
+.reactionBox {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    color: #b0b3b8;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 0;
+
+}
+
+.reactionBox:hover {
+    background: #ffffff1f;
+    border-radius: 5px;
+
+}

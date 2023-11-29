@@ -1,21 +1,43 @@
 import "./PostUpload.css";
+import UseAxios from "../../../Hooks/UseAxios";
 import { useContext, useRef } from "react";
 import { useState } from "react";
 import { BsEmojiLaughing } from "react-icons/bs";
 import { MdPhotoLibrary } from "react-icons/md";
 import { RiEarthFill, RiLiveFill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
+import { getTokenFromLS } from "../../../Hooks&Functions/LocalStorage";
 import { uploadIMG } from "../../../Hooks/uploadIMG";
 import { context } from "../../ContextProvider/ContextProvider";
 
-const PostUpload = () => {
+const PostUpload = ({ handleUploadPost }) => {
     const { user } = useContext(context)
     const [openModal, setOpenModal] = useState(false)
     const firstName = user?.displayName?.split(" ")[0]
     const [isDisable, setIsdisable] = useState(true)
 
+    const token = getTokenFromLS()
+
+
+    const axios = UseAxios()
+
     // user uploaded image preview
     const [showPreview, setShowPreview] = useState(null)
+
+    // month array
+    const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+    const date = new Date()
+    const monthIndex = date.getMonth()
+    const month = monthArr[monthIndex]
+    const day = date.getDate()
+    const year = date.getFullYear()
+    const today = `${month} ${day}. ${year}`
+
+
+
+
 
     const postImgRef = useRef(null)
 
@@ -48,22 +70,12 @@ const PostUpload = () => {
 
         reader.readAsDataURL(file)
 
-        console.log(showPreview?.previewURL);
     }
 
 
 
     // poast upload function
-    const handleUploadPost = async (e) => {
-        e.preventDefault()
-        const form = e.target
-        // post caption
-        const postCap = form.postCap.value
 
-        // post image
-        const image = form.postImg.files[0]
-        console.log(postCap, image);
-    }
 
 
 
@@ -123,8 +135,8 @@ const PostUpload = () => {
 
 
 
-                        <form className="postForm" onSubmit={handleUploadPost} >
-                            <textarea onKeyUp={checkCaption} type="text" className="postCaption" placeholder={`what's on your mind ${firstName}`} name="postCap" />
+                        <form className="postForm" onSubmit={(e) => handleUploadPost(e, setOpenModal, setShowPreview)} >
+                            <textarea onKeyUp={checkCaption} type="text" required className="postCaption" placeholder={`what's on your mind ${firstName}`} name="postCap" />
 
                             <div className="postBox" onClick={pickImage}>
 

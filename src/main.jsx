@@ -8,8 +8,10 @@ import PrivateRoute from "./Compo/PrivateRoute/PrivateRoute";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import SignIn from "./Compo/SignIn/SignIn";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+const queryClient = new QueryClient()
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -25,16 +27,18 @@ const routes = createBrowserRouter([
   {
     path: "/signin",
     element: <SignIn></SignIn>
-  },{
-    path:"/mailCheck",
-    element:<CheckMail></CheckMail>
+  }, {
+    path: "/mailCheck",
+    element: <CheckMail></CheckMail>
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ContextProvider>
-      <RouterProvider router={routes} />
-    </ContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <ContextProvider>
+        <RouterProvider router={routes} />
+      </ContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

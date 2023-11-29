@@ -57,7 +57,7 @@ const HomePageContenct = ({ loading }) => {
         // host image
         if (image) {
             const { data: img } = await uploadIMG(image)
-            const uploadDetails = { uploadBy: user?.displayName, uploaderImg: user?.photoURL, uploadOn: today, postCap: postCap, isImage: true, postedImage: img?.display_url, liked: 0, comment: 0, likedBy: [], comments: [] }
+            const uploadDetails = { uploadBy: user?.displayName, uploaderImg: user?.photoURL, uploadOn: today, postCap: postCap, isImage: true, postedImage: img?.display_url,likedBy: [], comments: [] }
 
             // close the post upload modal
             setOpenModal(false)
@@ -91,7 +91,7 @@ const HomePageContenct = ({ loading }) => {
         <div className="HomeMain">
             <Story></Story>
             <PostUpload handleUploadPost={handleUploadPost}></PostUpload>
-            <AllPost data={data}></AllPost>
+            <AllPost data={data} ></AllPost>
         </div>
     );
 };

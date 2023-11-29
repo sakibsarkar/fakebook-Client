@@ -90,7 +90,7 @@
 }
 
 .reactNumber {
-    width: 100%;
+    width: calc(100% - 26px);
     color: #afafaf;
     display: flex;
     justify-content: flex-end;
@@ -129,4 +129,23 @@
     background: #ffffff1f;
     border-radius: 5px;
 
+}
+
+
+.liked {
+    color: #0566ff;
+}
+
+.likeAni {
+    animation: like 0.3s linear 0s;
+}
+
+@keyframes like {
+    0% {
+        transform: scale(1.8) rotate(-60deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
 }

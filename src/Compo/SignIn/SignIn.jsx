@@ -53,9 +53,6 @@ const SignIn = async () => {
             photoURL: data.display_url
         })
 
-
-        await sendEmailVerification(res.user)
-        setWait(false)
         navigate("/mailCheck")
 
 

@@ -18,7 +18,6 @@ const UseAxios = () => {
         const status = err?.response?.status
         if (status == 401 || status == 403) {
             await LogOut()
-            removeToken()
             Promise.reject(err)
             navigate("/login")
         }

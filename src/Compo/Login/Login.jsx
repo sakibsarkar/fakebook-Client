@@ -23,7 +23,6 @@ const Login = () => {
         try {
             const res = await LogInUser(email, password)
             const { data } = await axios.post(`/user/token`, { email })
-            console.log(data.token);
             addTokenToLS(data.token)
         }
 

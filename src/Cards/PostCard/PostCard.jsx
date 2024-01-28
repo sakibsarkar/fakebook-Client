@@ -34,7 +34,7 @@ const PostCard = ({ post }) => {
         }
 
         await axios.put(`/post/liked?token=${token}&&postId=${_id}&&liker=${user?.email}`)
-        setNumberOfLike(likedBy.length + 1)
+        setNumberOfLike(numberOfLike + 1)
         setIsLiked(true)
     }
 
@@ -85,7 +85,7 @@ const PostCard = ({ post }) => {
 
                             <div className="ClickReaction ">
                                 <div className={isLiked ? "like reactionBox liked" : "like reactionBox"} onClick={handleLike}>
-                                    {isLiked ? <AiFillLike className="likeAni"/> : <AiOutlineLike />} Like
+                                    {isLiked ? <AiFillLike className="likeAni" /> : <AiOutlineLike />} Like
                                 </div>
 
                                 <div className="comment reactionBox">

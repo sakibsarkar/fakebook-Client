@@ -4,9 +4,7 @@ import { context } from "../ContextProvider/ContextProvider";
 
 const PrivateRoute = ({ children }) => {
     const { user } = useContext(context)
-
-
-    return user?.emailVerified ? children : <Navigate to={"/login"}></Navigate>
+    return user ? children : <Navigate to={"/login"}></Navigate>
 
 };
 
